@@ -1,6 +1,7 @@
 body {
   
   font-family: 'Poppins', sans-serif;
+  
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,6 +16,6 @@ code {
 html{
   font-size: 62.5%;
   letter-spacing: -0.035em;
-  
+  font-weight: 500;
   box-sizing: border-box;
 }
