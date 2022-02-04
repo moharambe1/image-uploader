@@ -1,0 +1,50 @@
+.check_circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-image: url("../../assets/check_circle_black_36dp.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img {
+  width: 84%;
+  min-height: 200px;
+  max-height: 65%;
+  object-fit: fill;
+  border-radius: 12px;
+}
+
+.link_div {
+  display: flex;
+  width: 84%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.4rem;
+  margin-bottom: 1.2rem;
+  
+  background: #f6f8fb;
+
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.link {
+  
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: "..." "...";
+  text-align: start;
+  padding-left: 2ch;
+  flex-grow: 1;
+  padding-right: 1ch;
+  font-size: 1.2rem;
+  color: #4F4F4F;
+}
+.btn {
+  
+  min-width: max-content;
+}
