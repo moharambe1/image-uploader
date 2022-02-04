@@ -1,15 +1,16 @@
 import { useState } from "react";
 
-import "../style/pages/upload-page.css";
+import classCss from "../style/pages/upload-page.module.css";
 import UploadImg from "../components/upload-img";
 import UploadBarPrgrs from "../components/upload-bar-prgs";
 
 function UploadPage() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <div className="upload-page">
+    <div className={classCss.upload_page}>
       {isLoading ? <UploadBarPrgrs /> : <UploadImg />}
+      <footer className={classCss.footer_text}>created by username - moharambe1</footer>
     </div>
   );
 }

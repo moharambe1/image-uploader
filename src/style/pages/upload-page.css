@@ -1,9 +1,0 @@
-.upload-page{
-  display: grid;
-  min-height: 99.8vh;
-  padding: 4vh 0;
-  box-sizing: border-box;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr;
-}
-
