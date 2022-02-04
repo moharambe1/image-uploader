@@ -1,0 +1,56 @@
+
+.titel {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  color: #4f4f4f;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 500;
+  color: #828282;
+  font-size: 1rem;
+}
+.or {
+  font-style: normal;
+  font-weight: 500;
+  color: #828282;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+.drop_img_dev {
+  max-width: 85%;
+  height: 50%;
+  background-image: url(../../assets/image.svg);
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position-x: 50%;
+  background-position-y: 33%;
+  margin: 0 auto;
+  background-color: #f6f8fb;
+  border: 2px dashed #97bef4;
+  border-radius: 12px;
+}
+.drop_img_dev > p {
+  padding-top: 47%;
+  margin: 0;
+  padding-bottom: 11.5%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #bdbdbd;
+}
+.choose_a_file {
+  color: #ffffff;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.6rem;
+  border: 0;
+  line-height: 1.6rem;
+  background: #2f80ed;
+  border-radius: 8px;
+}
