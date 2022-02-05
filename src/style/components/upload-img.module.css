@@ -39,7 +39,7 @@
   padding-bottom: 11.5%;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #bdbdbd;
 }
 .choose_a_file {
@@ -53,4 +53,13 @@
   line-height: 1.6rem;
   background: #2f80ed;
   border-radius: 8px;
+}
+
+.highlight{
+  background-color: #166ee0b9;
+  opacity: 0.7;
+  font-size: 2rem;
+}
+.drop_img_dev> .text_highlight{
+  font-size: 2rem;
 }
