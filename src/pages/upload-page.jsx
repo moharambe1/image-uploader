@@ -7,18 +7,21 @@ import UploadSucces from "../components/upload-succes";
 
 function UploadPage() {
   const [isLoading, setIsLoading] = useState(false);
-  const [isDone, setIsDone] = useState(true);
-  const [isSuccess, setIsSuccess] = useState(true);
+  const [isDone, setIsDone] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   return (
     <div className={classCss.upload_page}>
       {isDone ? <UploadSucces imgUrl="https://static-cse.canva.com/blob/666309/bestfreestockphotos.jpg" /> :
-        (isLoading ? <UploadBarPrgrs /> : <UploadImg />)}
+        (isLoading ? <UploadBarPrgrs /> : <UploadImg handleDrop={handleDrop} />)}
       
       
       <footer className={classCss.footer_text}>reated by username - moharambe1</footer>
     </div>
   );
+  function handleDrop(files){
+    console.log(files);
+  }
 }
 
 export default UploadPage;
