@@ -13,7 +13,7 @@
 .img {
   width: 84%;
   min-height: 200px;
-  max-height: 65%;
+  max-height: 250px;
   object-fit: fill;
   border-radius: 12px;
 }
