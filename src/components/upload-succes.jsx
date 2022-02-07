@@ -5,6 +5,10 @@ import ButtenPrimary from "../shared/butten_theme";
 import Title from "../shared/title";
 
 const UploadSucces=(props)=>{
+  function copyLinkHandeler(){
+    console.log("copy")
+    navigator.clipboard.writeText(props.imgUrl);
+  }
   return <UploadDiv>
     <div className={classCss.check_circle}></div>
     <Title >Uploaded Successfully!</Title>
@@ -13,7 +17,7 @@ const UploadSucces=(props)=>{
     
     <div className={classCss.link_div}>
       <p className={classCss.link}>{props.imgUrl}</p>    
-      <ButtenPrimary className={classCss.btn}>Copy Link</ButtenPrimary>
+      <ButtenPrimary className={classCss.btn} onClick={copyLinkHandeler}>Copy Link</ButtenPrimary>
     </div>
   </UploadDiv>
 }

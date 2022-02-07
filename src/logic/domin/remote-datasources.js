@@ -16,8 +16,9 @@ const rmt_datasource = {
     });
     if(res.status>=200 && res.status<300)
     {
-      const link=await res.json().imgLink;
-      return link;
+      const link=await res.json();
+      console.log(link);
+      return link.imgLink;
     }
     let json=await res.json();
     

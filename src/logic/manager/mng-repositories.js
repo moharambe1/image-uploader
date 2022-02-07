@@ -6,7 +6,7 @@ const mng_repositories = {
     mng_upload_page.updatePage("uploading", {});
     try {
       const link = await dmn_repositories.uploadImg(data);
-
+      console.log("link is "+link);
       mng_upload_page.updatePage("uploaded", {
         url: link
       });
