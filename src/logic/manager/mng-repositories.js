@@ -3,15 +3,18 @@ import mng_upload_page from "./mng-upload-page";
 
 const mng_repositories = {
   async uploadImgHandler(data) {
-    dmn_repositories.uploadImg(data);
     mng_upload_page.updatePage("uploading", {});
-    setTimeout(
-      () =>
-        mng_upload_page.updatePage("uploaded", {
-          url: "https://via.placeholder.com/600/92c952",
-        }),
-      3000
-    );
+    try {
+      const link = await dmn_repositories.uploadImg(data);
+
+      mng_upload_page.updatePage("uploaded", {
+        url: link
+      });
+      
+    } catch (err) {
+      mng_upload_page.updatePage("error", { title: "Error", message: err.message });
+    }
   },
+
 };
 export default mng_repositories;
