@@ -1,9 +1,9 @@
-import classCss from "../style/shared/butten.module.css"
+import classCss from "../style/shared/button.module.css"
 
 
-const ButtenPrimary=(props)=>{
+const ButtonPrimary=(props)=>{
   return <button onClick={props.onClick} className={`${classCss.butten_primary} ${props.className}`}>{props.children}</button>
 }
 
 
-export default ButtenPrimary;
+export default ButtonPrimary;

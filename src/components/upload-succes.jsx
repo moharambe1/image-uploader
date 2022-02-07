@@ -1,7 +1,7 @@
 
 import UploadDiv from "./upload-div"
 import classCss from "../style/components/upload-succes.module.css"
-import ButtenPrimary from "../shared/butten_theme";
+import ButtonPrimary from "../shared/button_theme";
 import Title from "../shared/title";
 
 const UploadSucces=(props)=>{
@@ -17,7 +17,7 @@ const UploadSucces=(props)=>{
     
     <div className={classCss.link_div}>
       <p className={classCss.link}>{props.imgUrl}</p>    
-      <ButtenPrimary className={classCss.btn} onClick={copyLinkHandeler}>Copy Link</ButtenPrimary>
+      <ButtonPrimary className={classCss.btn} onClick={copyLinkHandeler}>Copy Link</ButtonPrimary>
     </div>
   </UploadDiv>
 }
