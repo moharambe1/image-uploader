@@ -6,15 +6,13 @@ const mng_repositories = {
     mng_upload_page.updatePage("uploading", {});
     try {
       const link = await dmn_repositories.uploadImg(data);
-      console.log("link is "+link);
-      mng_upload_page.updatePage("uploaded", {
-        url: link
-      });
-      
+      const img = await dmn_repositories.getImg(link);
     } catch (err) {
-      mng_upload_page.updatePage("error", { title: "Error", message: err.message });
+      mng_upload_page.updatePage("error", {
+        title: "Error",
+        message: err.message,
+      });
     }
   },
-
 };
 export default mng_repositories;
