@@ -29,15 +29,18 @@ const rmt_datasource = {
   async getImg(link) {
     const reader = new FileReader();
     let result;
+    const hash=link.substring(link.lastIndexOf("/"));
+
     reader.onload = () => {
       result = reader.result;
       mng_upload_page.updatePage("uploaded", {
-        url: result,
+        url:link,
+        data: result,
       });
     };
-
+    const url="/api/img"+hash;
     await (async () => {
-      const response = await fetch(link);
+      const response = await fetch(url);
       const imageBlob = await response.blob();
       reader.readAsDataURL(imageBlob);
     })();

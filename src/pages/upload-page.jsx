@@ -9,7 +9,7 @@ import PopUp from "../shared/pop-up";
 
 function UploadPage() {
   const [isUploading, setIsUploading] = useState(false);
-  const [isImgUploaded, setIsImgUploaded] = useState("");
+  const [isImgUploaded, setIsImgUploaded] = useState(null);
   const [isPopUp, setIsPopUp] = useState(null);
 
   useEffect(() => {
@@ -24,9 +24,9 @@ function UploadPage() {
     <div className={classCss.upload_page}>
       {isPopUp ? <PopUp title={isPopUp.title} message={isPopUp.message} /> : null}
      
-      {isImgUploaded ? <UploadSucces imgUrl={isImgUploaded} /> : (isUploading ? <UploadBarPrgrs /> : <UploadImg handleDrop={handleDrop} />)}
+      {isImgUploaded ? <UploadSucces image={{url:"https://via.placeholder.com/150/56a8c2",data:"https://via.placeholder.com/150/56a8c2"}} /> : (isUploading ? <UploadBarPrgrs /> : <UploadImg handleDrop={handleDrop} />)}
 
-      <footer className={classCss.footer_text}>reated by username - moharambe1</footer>
+      <footer className={classCss.footer_text}>created by moharambe1 - devChallenges.io</footer>
     </div>
   );
   function handleDrop(files) {

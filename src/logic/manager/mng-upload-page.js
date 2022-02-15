@@ -17,7 +17,7 @@ const mng_upload_page = {
       case "uploaded":
         console.log("uploaded");
         this.pageSetIsUploading(false);
-        this.pageSetIsImgUploaded(obj.url);
+        this.pageSetIsImgUploaded(obj);
         break;
       case "error":
         this.pageSetIsPopUp({ title: obj.title, message: obj.message });

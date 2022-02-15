@@ -35,16 +35,62 @@
 .link {
   
   overflow: hidden;
+  overflow: ellipsis;
   white-space: nowrap;
-  text-overflow: "..." "...";
+  text-overflow: "...";
   text-align: start;
   padding-left: 2ch;
   flex-grow: 1;
-  padding-right: 1ch;
+  margin-right: 1.5ch;
   font-size: 1.2rem;
   color: #4F4F4F;
 }
 .btn {
   
   min-width: max-content;
+}
+.copy_feed_back{
+  
+  box-sizing: border-box;
+  padding-left: 1ch;
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  top: 5vh;
+  right: 0;
+  overflow: hidden;
+  width: 20rem;
+ 
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.animation_pop_up{
+  animation: feedback 1.6s linear 1 forwards;
+}
+@keyframes feedback {
+  0%{
+    opacity: 0;
+    
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.copy_feed_back>p{
+  font-size: 1.7rem;
+  padding-left: 1ch;
+}
+
+.feed_back{
+  margin: auto 0;
+  padding: 0;
+  width: 3.5rem;
+  height: 3.5rem; 
+  background-image: url("../../assets/check_circle_black_36dp.svg");
+}
+.container{
+  position: relative;
 }
