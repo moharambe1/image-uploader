@@ -26,7 +26,7 @@ function UploadPage() {
      
       {isImgUploaded ? <UploadSucces image={isImgUploaded} /> : (isUploading ? <UploadBarPrgrs /> : <UploadImg handleDrop={handleDrop} />)}
 
-      <footer className={classCss.footer_text}>created by moharambe1 - devChallenges.io</footer>
+      <footer className={classCss.footer_text}> created by <a href="https://github.com/moharambe1" target="_blank">@moharambe1</a> - <a href="https://devchallenges.io/" target="_blank">devChallenges.io</a></footer>
     </div>
   );
   function handleDrop(files) {
