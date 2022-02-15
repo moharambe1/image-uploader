@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, createRef } from "react";
 
 import UploadDiv from "./upload-div";
 import classCss from "../style/components/upload-img.module.css";
@@ -6,21 +6,25 @@ import classCss from "../style/components/upload-img.module.css";
 const UploadImg = (props) => {
   //Must add handleDrop function to handel drop files
   const dropRef = useRef(null);
+  const buttonRef= useRef(null);
   const [isDrag, setIsDrag] = useState(false);
+  
   let DragItemsConter = 0;
   useEffect(() => {
     let uploadDiv = dropRef.current;
+    let buttenInput= buttonRef.current;
     uploadDiv.addEventListener("dragstart", handleDragStart);
     uploadDiv.addEventListener("dragenter", handleDragIn);
     uploadDiv.addEventListener("dragleave", handleDragOut);
     uploadDiv.addEventListener("dragover", handleDrag);
     uploadDiv.addEventListener("drop", handleDrop);
-
+    buttenInput.addEventListener("change",handleChooseFile);
     return () => {
       uploadDiv.removeEventListener("dragleave", handleDragOut);
       uploadDiv.removeEventListener("dragenter", handleDragIn);
       uploadDiv.removeEventListener("dragover", handleDrag);
       uploadDiv.removeEventListener("drop", handleDrop);
+      buttenInput.removeEventListener("change",handleChooseFile);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -40,7 +44,8 @@ const UploadImg = (props) => {
         </p>
       </div>
       <p className={classCss.or}>Or</p>
-      <button className={classCss.choose_a_file}>Choose a file</button>
+      <button className={classCss.choose_a_file}  onClick={handleClick} >Choose a file</button>
+      <input type="file" ref={buttonRef} className={classCss.input_file}/>
     </UploadDiv>
   );
 
@@ -84,6 +89,23 @@ const UploadImg = (props) => {
     e.preventDefault();
     e.stopPropagation();
     e.dataTransfer.clearData();
+  }
+
+  function handleClick(){
+    buttonRef.current.click();
+  }
+  function handleChooseFile(file){
+    file.preventDefault();
+    file.stopPropagation();
+    try {
+      props.handleDrop(file.files);
+    } catch (err) {
+      if (props.handleDrop == null)
+        console.error(
+          "Error: mast provided handleDrop function to handle doped files"
+        );
+      console.error(err);
+    }
   }
 };
 

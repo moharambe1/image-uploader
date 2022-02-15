@@ -22,6 +22,7 @@ const mng_upload_page = {
       case "error":
         this.pageSetIsPopUp({ title: obj.title, message: obj.message });
         setTimeout(() => mng_upload_page.pageSetIsPopUp(null), obj.timeOut || 2000);
+        break;
       default:
         this.pageSetIsUploading(false);
         this.pageSetIsImgUploaded("");

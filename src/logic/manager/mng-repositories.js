@@ -5,12 +5,13 @@ const mng_repositories = {
   async uploadImgHandler(data) {
    
     try {
-      if(process.env.PRODUCTION){
+      if(process.env.REACT_APP_PRODUCTION!=null){
         mng_upload_page.updatePage("uploading", {});
         const link = await dmn_repositories.uploadImg(data);
         const img = await dmn_repositories.getImg(link);
       }else{
-        console.log("dev server")
+        console.log(process.env.PRODUCTION);
+        console.log("dev server");
         mng_upload_page.updatePage("uploaded", {url:"https://via.placeholder.com/150/56a8c2",data:"https://via.placeholder.com/150/56a8c2"});
       }
       

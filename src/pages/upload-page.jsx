@@ -24,7 +24,7 @@ function UploadPage() {
     <div className={classCss.upload_page}>
       {isPopUp ? <PopUp title={isPopUp.title} message={isPopUp.message} /> : null}
      
-      {isImgUploaded ? <UploadSucces image={{url:"https://via.placeholder.com/150/56a8c2",data:"https://via.placeholder.com/150/56a8c2"}} /> : (isUploading ? <UploadBarPrgrs /> : <UploadImg handleDrop={handleDrop} />)}
+      {isImgUploaded ? <UploadSucces image={isImgUploaded} /> : (isUploading ? <UploadBarPrgrs /> : <UploadImg handleDrop={handleDrop} />)}
 
       <footer className={classCss.footer_text}>created by moharambe1 - devChallenges.io</footer>
     </div>

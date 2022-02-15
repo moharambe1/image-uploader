@@ -6,22 +6,14 @@ import { useEffect, useRef, useState } from "react";
 
 const UploadSucces = (props) => {
   const refCopyFeedBack = useRef();
-  const [isCopyed, setIsCopyed] = useState(false);
+  const [isCopyed, setIsCopyed] = useState(0);
+
   useEffect(() => {
+  }, [isCopyed]);
 
-      
-      
-      refCopyFeedBack.current.className=classCss.copy_feed_back+ " "+ classCss.animation_pop_up;
-      setIsCopyed(true);
-      
-
-
-  },[isCopyed]);
   function copyLinkHandeler() {
     navigator.clipboard.writeText(props.image.url);
-    refCopyFeedBack.current.className=classCss.copy_feed_back;
-    setIsCopyed(false);
-    //refCopyFeedBack.className.
+    setIsCopyed(isCopyed+1);
   }
   return (
     <UploadDiv>
@@ -36,15 +28,18 @@ const UploadSucces = (props) => {
           Copy Link
         </ButtonPrimary>
       </div>
-      {
-      true ?
-        <div ref={refCopyFeedBack} className={`${classCss.copy_feed_back} ${classCss.animation_pop_up}`}>
+      {isCopyed ? (
+        <div
+          key={isCopyed}
+          ref={refCopyFeedBack}
+          className={`${classCss.copy_feed_back} ${classCss.animation_pop_up}`}
+        >
           <div
             className={`${classCss.check_circle} ${classCss.feed_back}`}
           ></div>
           <p> Link is copyed </p>
-        </div>:null
-       }
+        </div>
+      ) : null}
     </UploadDiv>
   );
 };

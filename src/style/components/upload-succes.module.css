@@ -65,7 +65,7 @@
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 .animation_pop_up{
-  animation: feedback 1.6s linear 1 forwards;
+  animation: feedback 1.4s linear 1 forwards;
 }
 @keyframes feedback {
   0%{

@@ -11,3 +11,6 @@
   border-radius: 8px;
 }
 
+.butten_primary:active{
+  opacity: 0.7;
+}

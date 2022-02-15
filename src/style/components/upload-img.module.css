@@ -53,8 +53,12 @@
   line-height: 1.6rem;
   background: #2f80ed;
   border-radius: 8px;
+  
 }
 
+.choose_a_file:active{
+  opacity: 0.6;
+}
 .highlight{
   background-color: #166ee0b9;
   opacity: 0.7;
@@ -62,4 +66,7 @@
 }
 .drop_img_dev> .text_highlight{
   font-size: 2rem;
+}
+.input_file{
+  display: none;
 }
